@@ -297,6 +297,97 @@
             border-bottom: none;
         }
         
+        /* Use Cases */
+        .usecase-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .usecase-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.2s;
+        }
+        
+        .usecase-card:hover {
+            border-color: #f97316;
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.15);
+        }
+        
+        .usecase-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .usecase-icon {
+            font-size: 1.5rem;
+        }
+        
+        .time-saved {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #22c55e;
+            background: rgba(34, 197, 94, 0.15);
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+        
+        .usecase-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fafafa;
+        }
+        
+        .usecase-trigger {
+            font-size: 0.875rem;
+            color: #888;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        
+        .decision-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .decision-btn {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #0a0a0a;
+            color: #a1a1a1;
+            cursor: pointer;
+            transition: all 0.15s;
+            text-align: left;
+        }
+        
+        .decision-btn:hover {
+            background: #1a1a1a;
+            border-color: #444;
+            color: #fafafa;
+        }
+        
+        .decision-btn.primary {
+            background: #f97316;
+            color: #ffffff;
+            border-color: #f97316;
+        }
+        
+        .decision-btn.primary:hover {
+            background: #ea580c;
+        }
+        
         /* Footer */
         footer {
             padding: 48px 24px;
@@ -315,7 +406,7 @@
                 transform: rotate(90deg);
             }
             
-            .leverage-grid, .changes-grid {
+            .leverage-grid, .changes-grid, .usecase-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -421,6 +512,129 @@
             </div>
             
             <p style="margin-top: 40px; text-align: center; font-size: 1.25rem; color: #fafafa;">The result: you do more, with less effort, in less time.</p>
+        </div>
+    </section>
+    
+    <!-- E-Commerce Use Cases -->
+    <section>
+        <div class="container">
+            <div class="section-label">For DTC Operators</div>
+            <h2>Real scenarios, real decisions.</h2>
+            <p class="lead">Here's what shows up in your inbox — and the time you get back.</p>
+            
+            <div class="usecase-grid">
+                <div class="usecase-card">
+                    <div class="usecase-header">
+                        <span class="usecase-icon">📦</span>
+                        <span class="time-saved">Saves 45 min</span>
+                    </div>
+                    <h3>Low Stock Alert</h3>
+                    <p class="usecase-trigger">"Your #2 SKU hits safety stock in 6 days. Current lead time is 14 days."</p>
+                    <div class="decision-options">
+                        <button class="decision-btn primary">Place reorder now</button>
+                        <button class="decision-btn">Check backup supplier</button>
+                        <button class="decision-btn">Reduce ad spend on SKU</button>
+                    </div>
+                </div>
+                
+                <div class="usecase-card">
+                    <div class="usecase-header">
+                        <span class="usecase-icon">⭐</span>
+                        <span class="time-saved">Saves 30 min</span>
+                    </div>
+                    <h3>VIP Customer Issue</h3>
+                    <p class="usecase-trigger">"Repeat customer ($2,400 LTV) left 1-star review. Order arrived damaged."</p>
+                    <div class="decision-options">
+                        <button class="decision-btn primary">Full refund + replacement + gift</button>
+                        <button class="decision-btn">Call personally</button>
+                        <button class="decision-btn">Standard CS response</button>
+                    </div>
+                </div>
+                
+                <div class="usecase-card">
+                    <div class="usecase-header">
+                        <span class="usecase-icon">📉</span>
+                        <span class="time-saved">Saves 2 hrs</span>
+                    </div>
+                    <h3>Ad Performance Drop</h3>
+                    <p class="usecase-trigger">"Meta ROAS dropped 40% since Tuesday. 'Broad Interest' audience is the culprit."</p>
+                    <div class="decision-options">
+                        <button class="decision-btn primary">Pause underperformer</button>
+                        <button class="decision-btn">Reallocate to top creative</button>
+                        <button class="decision-btn">Request full audit</button>
+                    </div>
+                </div>
+                
+                <div class="usecase-card">
+                    <div class="usecase-header">
+                        <span class="usecase-icon">🎤</span>
+                        <span class="time-saved">Saves 1 hr</span>
+                    </div>
+                    <h3>Influencer Opportunity</h3>
+                    <p class="usecase-trigger">"Creator with 340K followers (82% your demo) organically tagged your product."</p>
+                    <div class="decision-options">
+                        <button class="decision-btn primary">Send PR package</button>
+                        <button class="decision-btn">Propose paid collab</button>
+                        <button class="decision-btn">Add to watchlist</button>
+                    </div>
+                </div>
+                
+                <div class="usecase-card">
+                    <div class="usecase-header">
+                        <span class="usecase-icon">🚚</span>
+                        <span class="time-saved">Saves 3 hrs</span>
+                    </div>
+                    <h3>Supplier Delay</h3>
+                    <p class="usecase-trigger">"Main supplier delayed 2 weeks. 847 pre-orders affected. Backup quoted +18% cost."</p>
+                    <div class="decision-options">
+                        <button class="decision-btn primary">Use backup, eat margin</button>
+                        <button class="decision-btn">Negotiate with main supplier</button>
+                        <button class="decision-btn">Email customers proactively</button>
+                    </div>
+                </div>
+                
+                <div class="usecase-card">
+                    <div class="usecase-header">
+                        <span class="usecase-icon">💰</span>
+                        <span class="time-saved">Saves 1.5 hrs</span>
+                    </div>
+                    <h3>Competitor Price Drop</h3>
+                    <p class="usecase-trigger">"Top competitor cut prices 15% on their hero SKU. Their stock is limited."</p>
+                    <div class="decision-options">
+                        <button class="decision-btn primary">Hold position, monitor</button>
+                        <button class="decision-btn">Launch bundle offer</button>
+                        <button class="decision-btn">Match with flash sale</button>
+                    </div>
+                </div>
+                
+                <div class="usecase-card">
+                    <div class="usecase-header">
+                        <span class="usecase-icon">📧</span>
+                        <span class="time-saved">Saves 1 hr</span>
+                    </div>
+                    <h3>Email Flow Underperforming</h3>
+                    <p class="usecase-trigger">"Abandoned cart flow dropped to 2.1% conversion (was 4.8%). Subject line fatigue likely."</p>
+                    <div class="decision-options">
+                        <button class="decision-btn primary">Deploy new subject lines</button>
+                        <button class="decision-btn">Adjust send timing</button>
+                        <button class="decision-btn">Add discount to flow</button>
+                    </div>
+                </div>
+                
+                <div class="usecase-card">
+                    <div class="usecase-header">
+                        <span class="usecase-icon">🔄</span>
+                        <span class="time-saved">Saves 45 min</span>
+                    </div>
+                    <h3>Returns Spike</h3>
+                    <p class="usecase-trigger">"Return rate on new colorway is 3x normal. Common reason: 'color different than photos.'"</p>
+                    <div class="decision-options">
+                        <button class="decision-btn primary">Update product photos</button>
+                        <button class="decision-btn">Add color disclaimer</button>
+                        <button class="decision-btn">Pull from ads temporarily</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     
