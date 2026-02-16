@@ -14,8 +14,8 @@
         
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            background: #0a0a0a;
-            color: #fafafa;
+            background: #fafafa;
+            color: #000000;
             line-height: 1.7;
         }
         
@@ -29,7 +29,7 @@
         header {
             padding: 60px 24px 40px;
             text-align: center;
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid #e1e1e1;
         }
         
         .logo {
@@ -37,7 +37,7 @@
             font-weight: 600;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: #888;
+            color: #666;
             margin-bottom: 8px;
         }
         
@@ -45,11 +45,12 @@
             font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 800;
             margin-bottom: 16px;
+            color: #000000;
         }
         
         .subtitle {
             font-size: 1.125rem;
-            color: #888;
+            color: #666;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -57,7 +58,7 @@
         /* Sections */
         section {
             padding: 80px 24px;
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid #e1e1e1;
         }
         
         section:last-of-type {
@@ -69,7 +70,7 @@
             font-weight: 600;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: #f97316;
+            color: #3d1cb1;
             margin-bottom: 16px;
         }
         
@@ -78,17 +79,18 @@
             font-weight: 700;
             margin-bottom: 24px;
             line-height: 1.2;
+            color: #000000;
         }
         
         p {
-            color: #a1a1a1;
+            color: #444;
             margin-bottom: 20px;
             font-size: 1.0625rem;
         }
         
         p.lead {
             font-size: 1.25rem;
-            color: #d4d4d4;
+            color: #262626;
         }
         
         /* Shift Visual */
@@ -107,12 +109,13 @@
         }
         
         .shift-before {
-            background: #1a1a1a;
-            border: 1px solid #333;
+            background: #ffffff;
+            border: 1px solid #e1e1e1;
         }
         
         .shift-after {
-            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            background: linear-gradient(135deg, #a1a1f1 0%, #3d1cb1 100%);
+            color: #ffffff;
         }
         
         .shift-label {
@@ -138,7 +141,11 @@
         .shift-box li {
             padding: 8px 0;
             font-size: 0.9375rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .shift-after li {
+            border-bottom: 1px solid rgba(255,255,255,0.15);
         }
         
         .shift-box li:last-child {
@@ -147,7 +154,7 @@
         
         .shift-arrow {
             font-size: 2rem;
-            color: #444;
+            color: #a1a1f1;
         }
         
         /* Org Stack Visual */
@@ -165,12 +172,14 @@
         }
         
         .stack-leader {
-            background: #1a1a1a;
-            border: 2px solid #fafafa;
+            background: #ffffff;
+            border: 2px solid #000000;
+            color: #000000;
         }
         
         .stack-ai {
-            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            background: linear-gradient(135deg, #a1a1f1 0%, #3d1cb1 100%);
+            color: #ffffff;
             margin: 24px 0;
         }
         
@@ -181,21 +190,22 @@
         }
         
         .stack-base-item {
-            background: #1a1a1a;
-            border: 1px solid #333;
+            background: #ffffff;
+            border: 1px solid #e1e1e1;
             padding: 16px;
             border-radius: 8px;
             font-size: 0.875rem;
+            color: #000000;
         }
         
         .stack-arrow {
-            color: #444;
+            color: #a1a1f1;
             font-size: 1.5rem;
         }
         
         .stack-sublabel {
             font-size: 0.75rem;
-            color: #888;
+            color: #666;
             font-weight: 400;
             margin-top: 4px;
         }
@@ -209,8 +219,8 @@
         }
         
         .leverage-card {
-            background: #1a1a1a;
-            border: 1px solid #333;
+            background: #ffffff;
+            border: 1px solid #e1e1e1;
             border-radius: 12px;
             padding: 32px;
         }
@@ -218,7 +228,7 @@
         .leverage-number {
             font-size: 3rem;
             font-weight: 800;
-            color: #f97316;
+            color: #3d1cb1;
             margin-bottom: 12px;
         }
         
@@ -226,6 +236,7 @@
             font-size: 1.125rem;
             font-weight: 700;
             margin-bottom: 8px;
+            color: #000000;
         }
         
         .leverage-card p {
@@ -243,7 +254,7 @@
             grid-template-columns: 100px 1fr;
             gap: 24px;
             padding: 24px 0;
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid #e1e1e1;
         }
         
         .timeline-item:last-child {
@@ -252,13 +263,14 @@
         
         .timeline-year {
             font-weight: 700;
-            color: #f97316;
+            color: #3d1cb1;
         }
         
         .timeline-content h3 {
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 4px;
+            color: #000000;
         }
         
         .timeline-content p {
@@ -279,7 +291,8 @@
             font-weight: 700;
             margin-bottom: 16px;
             padding-bottom: 12px;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #e1e1e1;
+            color: #000000;
         }
         
         .change-col ul {
@@ -289,8 +302,8 @@
         .change-col li {
             padding: 10px 0;
             font-size: 0.9375rem;
-            color: #a1a1a1;
-            border-bottom: 1px solid #1a1a1a;
+            color: #444;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .change-col li:last-child {
@@ -306,16 +319,16 @@
         }
         
         .usecase-card {
-            background: #1a1a1a;
-            border: 1px solid #333;
+            background: #ffffff;
+            border: 1px solid #e1e1e1;
             border-radius: 12px;
             padding: 24px;
             transition: all 0.2s;
         }
         
         .usecase-card:hover {
-            border-color: #f97316;
-            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.15);
+            border-color: #a1a1f1;
+            box-shadow: 0 4px 16px rgba(161, 161, 241, 0.2);
         }
         
         .usecase-header {
@@ -333,7 +346,7 @@
             font-size: 0.75rem;
             font-weight: 700;
             color: #22c55e;
-            background: rgba(34, 197, 94, 0.15);
+            background: rgba(34, 197, 94, 0.1);
             padding: 4px 10px;
             border-radius: 12px;
         }
@@ -342,12 +355,12 @@
             font-size: 1rem;
             font-weight: 700;
             margin-bottom: 8px;
-            color: #fafafa;
+            color: #000000;
         }
         
         .usecase-trigger {
             font-size: 0.875rem;
-            color: #888;
+            color: #666;
             line-height: 1.5;
             margin-bottom: 16px;
             font-style: italic;
@@ -364,36 +377,37 @@
             font-weight: 600;
             padding: 8px 12px;
             border-radius: 6px;
-            border: 1px solid #333;
-            background: #0a0a0a;
-            color: #a1a1a1;
+            border: 1px solid #e1e1e1;
+            background: #fafafa;
+            color: #444;
             cursor: pointer;
             transition: all 0.15s;
             text-align: left;
         }
         
         .decision-btn:hover {
-            background: #1a1a1a;
-            border-color: #444;
-            color: #fafafa;
+            background: #f0f0f0;
+            border-color: #ccc;
+            color: #000000;
         }
         
         .decision-btn.primary {
-            background: #f97316;
+            background: #3d1cb1;
             color: #ffffff;
-            border-color: #f97316;
+            border-color: #3d1cb1;
         }
         
         .decision-btn.primary:hover {
-            background: #ea580c;
+            background: #a1a1f1;
         }
         
         /* Footer */
         footer {
             padding: 48px 24px;
             text-align: center;
-            color: #666;
+            color: #888;
             font-size: 0.875rem;
+            background: #ffffff;
         }
         
         /* Responsive */
@@ -511,7 +525,7 @@
                 </div>
             </div>
             
-            <p style="margin-top: 40px; text-align: center; font-size: 1.25rem; color: #fafafa;">The result: you do more, with less effort, in less time.</p>
+            <p style="margin-top: 40px; text-align: center; font-size: 1.25rem; color: #000000;">The result: you do more, with less effort, in less time.</p>
         </div>
     </section>
     
