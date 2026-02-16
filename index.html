@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lunchbox Cockpit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0a0a0a;
+            color: #fafafa;
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header */
+        header {
+            padding: 60px 24px 40px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+        
+        .logo {
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        
+        .subtitle {
+            font-size: 1.125rem;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 24px;
+            border-bottom: 1px solid #222;
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #f97316;
+            margin-bottom: 16px;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        
+        p {
+            color: #a1a1a1;
+            margin-bottom: 20px;
+            font-size: 1.0625rem;
+        }
+        
+        p.lead {
+            font-size: 1.25rem;
+            color: #d4d4d4;
+        }
+        
+        /* Shift Visual */
+        .shift-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 24px;
+            align-items: center;
+            margin: 48px 0;
+        }
+        
+        .shift-box {
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .shift-before {
+            background: #1a1a1a;
+            border: 1px solid #333;
+        }
+        
+        .shift-after {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+        }
+        
+        .shift-label {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            opacity: 0.7;
+        }
+        
+        .shift-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .shift-box ul {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .shift-box li {
+            padding: 8px 0;
+            font-size: 0.9375rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .shift-box li:last-child {
+            border-bottom: none;
+        }
+        
+        .shift-arrow {
+            font-size: 2rem;
+            color: #444;
+        }
+        
+        /* Org Stack Visual */
+        .org-stack {
+            max-width: 500px;
+            margin: 48px auto;
+            text-align: center;
+        }
+        
+        .stack-level {
+            padding: 20px;
+            margin: 8px 0;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        
+        .stack-leader {
+            background: #1a1a1a;
+            border: 2px solid #fafafa;
+        }
+        
+        .stack-ai {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            margin: 24px 0;
+        }
+        
+        .stack-base {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        
+        .stack-base-item {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+        }
+        
+        .stack-arrow {
+            color: #444;
+            font-size: 1.5rem;
+        }
+        
+        .stack-sublabel {
+            font-size: 0.75rem;
+            color: #888;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+        
+        /* Leverage Section */
+        .leverage-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .leverage-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 32px;
+        }
+        
+        .leverage-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #f97316;
+            margin-bottom: 12px;
+        }
+        
+        .leverage-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .leverage-card p {
+            font-size: 0.9375rem;
+            margin-bottom: 0;
+        }
+        
+        /* Why Now */
+        .timeline {
+            margin-top: 40px;
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 24px;
+            padding: 24px 0;
+            border-bottom: 1px solid #222;
+        }
+        
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+        
+        .timeline-year {
+            font-weight: 700;
+            color: #f97316;
+        }
+        
+        .timeline-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .timeline-content p {
+            font-size: 0.9375rem;
+            margin-bottom: 0;
+        }
+        
+        /* What Changes */
+        .changes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 40px;
+        }
+        
+        .change-col h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .change-col ul {
+            list-style: none;
+        }
+        
+        .change-col li {
+            padding: 10px 0;
+            font-size: 0.9375rem;
+            color: #a1a1a1;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        
+        .change-col li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 48px 24px;
+            text-align: center;
+            color: #666;
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 700px) {
+            .shift-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .shift-arrow {
+                transform: rotate(90deg);
+            }
+            
+            .leverage-grid, .changes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stack-base {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Internal</div>
+            <h1>The Lunchbox Cockpit</h1>
+            <p class="subtitle">How AI changes the way we work — and why we're building it now.</p>
+        </div>
+    </header>
+    
+    <!-- The Shift -->
+    <section>
+        <div class="container">
+            <div class="section-label">The Shift</div>
+            <h2>AI just became capable enough to work for you.</h2>
+            <p class="lead">In 2026, AI learned to reason. It can hold context, weigh tradeoffs, and execute reliably. This changes everything about how teams operate.</p>
+            
+            <div class="shift-container">
+                <div class="shift-box shift-before">
+                    <div class="shift-label">Before</div>
+                    <h3>Reactive AI</h3>
+                    <ul>
+                        <li>You ask, it answers</li>
+                        <li>Summarizes content</li>
+                        <li>Suggests options</li>
+                        <li>Waits for prompts</li>
+                    </ul>
+                </div>
+                <div class="shift-arrow">→</div>
+                <div class="shift-box shift-after">
+                    <div class="shift-label">Now</div>
+                    <h3>Proactive AI</h3>
+                    <ul>
+                        <li>Monitors and alerts you</li>
+                        <li>Drafts and executes</li>
+                        <li>Connects to your tools</li>
+                        <li>Works while you sleep</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- The Stack -->
+    <section>
+        <div class="container">
+            <div class="section-label">The New Org Stack</div>
+            <h2>Where AI fits in your workflow.</h2>
+            <p>AI becomes a layer between you and everything else — synthesizing, drafting, monitoring. You stay focused on judgment and decisions.</p>
+            
+            <div class="org-stack">
+                <div class="stack-level stack-leader">
+                    YOU
+                    <div class="stack-sublabel">Judgment, decisions, relationships</div>
+                </div>
+                <div class="stack-arrow">↕</div>
+                <div class="stack-level stack-ai">
+                    AI LAYER
+                    <div class="stack-sublabel">Synthesis, drafts, monitoring, execution</div>
+                </div>
+                <div class="stack-arrow">↕</div>
+                <div class="stack-base">
+                    <div class="stack-base-item">Tools<br><span style="color:#666;font-size:0.75rem">Slack, Email, Docs</span></div>
+                    <div class="stack-base-item">People<br><span style="color:#666;font-size:0.75rem">Team, vendors, partners</span></div>
+                    <div class="stack-base-item">Data<br><span style="color:#666;font-size:0.75rem">Metrics, reports, feeds</span></div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 32px;">The AI layer handles volume. You handle what matters.</p>
+        </div>
+    </section>
+    
+    <!-- Leverage -->
+    <section>
+        <div class="container">
+            <div class="section-label">Leverage</div>
+            <h2>The cockpit does two things.</h2>
+            
+            <div class="leverage-grid">
+                <div class="leverage-card">
+                    <div class="leverage-number">01</div>
+                    <h3>Identify Leverage</h3>
+                    <p>Synthesizes everything across your tools and surfaces what actually moves the needle. No more digging through Slack, email, and dashboards.</p>
+                </div>
+                <div class="leverage-card">
+                    <div class="leverage-number">02</div>
+                    <h3>Help You Act</h3>
+                    <p>Drafts the email. Builds the report. Runs the research. Doesn't just inform — executes on your behalf.</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 40px; text-align: center; font-size: 1.25rem; color: #fafafa;">The result: you do more, with less effort, in less time.</p>
+        </div>
+    </section>
+    
+    <!-- Why Now -->
+    <section>
+        <div class="container">
+            <div class="section-label">Why Now</div>
+            <h2>This wasn't possible 12 months ago.</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h3>"How do we use ChatGPT?"</h3>
+                        <p>Early experiments. Copy-paste workflows. Limited integration.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <h3>"How do we integrate AI into workflows?"</h3>
+                        <p>Tools start connecting. Agents emerge. Still requires technical setup.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Now</div>
+                    <div class="timeline-content">
+                        <h3>"How do we restructure teams around AI?"</h3>
+                        <p>AI is capable enough to handle real work. The question is organizational, not technical.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Soon</div>
+                    <div class="timeline-content">
+                        <h3>"Why are we behind?"</h3>
+                        <p>Companies that don't adapt will feel it. This is the window to build the muscle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What Changes -->
+    <section>
+        <div class="container">
+            <div class="section-label">In Practice</div>
+            <h2>What changes for you.</h2>
+            
+            <div class="changes-grid">
+                <div class="change-col">
+                    <h3>For Leaders</h3>
+                    <ul>
+                        <li>AI monitors your world and alerts you to what matters</li>
+                        <li>Prep for meetings happens automatically</li>
+                        <li>Decisions come with context already synthesized</li>
+                        <li>Less time in the weeds, more time on strategy</li>
+                        <li>Your leverage multiplies — do more with the same hours</li>
+                    </ul>
+                </div>
+                <div class="change-col">
+                    <h3>For Teams</h3>
+                    <ul>
+                        <li>Routine tasks get handled automatically</li>
+                        <li>Information flows without chasing</li>
+                        <li>Everyone has a "chief of staff" layer</li>
+                        <li>Focus shifts to judgment, not busywork</li>
+                        <li>Speed increases without headcount</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Closing -->
+    <section>
+        <div class="container" style="text-align: center;">
+            <div class="section-label">The Opportunity</div>
+            <h2>We're building this for Lunchbox.</h2>
+            <p class="lead" style="max-width: 700px; margin: 0 auto;">Not as a product. As a way of working. The goal is to make every person on this team more leveraged — able to do more, know more, and move faster than should be possible.</p>
+            <p style="margin-top: 32px; color: #888;">This is the future of how orgs run. We're just getting there early.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>Internal document — Lunchbox 2026</p>
+        </div>
+    </footer>
+</body>
+</html>
